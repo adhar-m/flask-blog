@@ -15,6 +15,11 @@ def about():
 def blog():
 	return render_template('blog.html', posts=get_posts())
 
+@app.route('/blogpost/<string:id>/')
+def blogpost(id):
+	return render_template('blogpost.html', posts=get_posts(), id=id)
+
+
 @app.route('/contact')
 def contact():
 	return render_template('contact.html')
