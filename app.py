@@ -19,11 +19,9 @@ def blog():
 def blogpost(id):
 	return render_template('blogpost.html', posts=get_posts(), id=id)
 
-
 @app.route('/contact')
 def contact():
 	return render_template('contact.html')
-
 
 if __name__ == '__main__':
 	app.run(debug=True)
