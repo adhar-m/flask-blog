@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+from data import get_posts
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -11,7 +13,7 @@ def about():
 
 @app.route('/blog')
 def blog():
-	return render_template('blog.html')
+	return render_template('blog.html', posts=get_posts())
 
 @app.route('/contact')
 def contact():
